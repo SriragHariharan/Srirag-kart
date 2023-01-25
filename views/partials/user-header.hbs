@@ -1,0 +1,116 @@
+{{!-- User-headers --}}
+<section>
+<nav class="navbar navbar-expand-lg  navbar-dark bg-danger">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" id="nav-items">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home </a>
+      </li>
+      
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/categories/cricket-bat">Bats</a>
+          <a class="dropdown-item" href="/categories/cricket-ball">Balls</a>
+          <a class="dropdown-item" href="/categories/batting-pads">Batting legguards</a>
+          <a class="dropdown-item" href="/categories/batting-gloves">Batting gloves</a>
+          <a class="dropdown-item" href="/categories/wicket-keeping-pads">Wicket keeping pads</a>
+          <a class="dropdown-item" href="/categories/wicket-keeping-gloves">Wicket keeping gloves</a>
+          <a class="dropdown-item" href="/categories/cricket-helmet">Cricket Helmets</a>
+          <a class="dropdown-item" href="/categories/cricket-shoes">Cricket shoes</a>
+          <a class="dropdown-item" href="/categories/thigh-guard">Thigh guards</a>
+          <a class="dropdown-item" href="/categories/elbow-guard">Elbow guards</a>
+          <a class="dropdown-item" href="/categories/cricket-kit-bag">Kit bags</a>
+          <a class="dropdown-item" href="/categories/cricket-wear">Wearables</a>
+          <a class="dropdown-item" href="/categories/cricket-accessories">Accessories</a>
+        </div>
+      </li>
+
+
+      {{#if userSession}}
+      <li class="nav-item">
+        <a class="nav-link active" href="/orders/{{userSession.mobileNumber}}">Orders</a>
+      </li>
+      {{/if}}
+    </ul>
+
+    <a class="navbar-brand m-auto" href="/"><h3> Srirag-Kart </h3></a>
+
+    <ul class="navbar-nav ml-auto" id="nav-items">
+      
+      
+
+      {{#if userSession}}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{userSession.username}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/profile/">Profile</a>
+          <a class="dropdown-item" href="/logout/">Logout</a>
+        </div>
+      </li>
+
+      {{else}}
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          ACCOUNT
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/login/">login</a>
+        </div>
+      </li>
+      {{/if}}
+
+      {{#if userSession}}
+
+      {{#if cartCount}}
+      <li class="nav-item">
+        <a class="nav-link" href="/cart/">Cart <span class="badge bg-success">{{cartCount}}</span> </a>
+      </li>
+      {{!-- {{else}}
+      <li class="nav-item">
+        <a class="nav-link" href="#" >Cart <span class="badge bg-danger"></span> </a>
+      </li> --}}
+      {{/if}}
+
+      {{/if}}
+    </ul>
+
+
+  </div>
+</nav>
+</section>
+
+{{!-- <style>
+             
+         .navbar {
+            background-image: linear-gradient(to right, #ee0979 0%, #ff6a00  51%, #ee0979  100%);
+            padding: 20px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;            
+            display: block;
+          }
+
+          .navbar:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+
+          #nav-items {
+            display: flex;
+            text-align: left;
+          }
+</style> --}}

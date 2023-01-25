@@ -1,0 +1,44 @@
+
+<h3 class="text-center mb-4">ORDERS</h3>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-10">
+                {{#each orders}}
+               <b>
+                <p><small>Order ID :</small>{{this._id}}</p>
+                <p><small>Order date :</small>  {{this.date}}</p>
+                <p><small>Payment Method :</small>  {{this.paymentMethod}}</p>
+                <p><small> Status : </small>{{this.status}}</p> 
+                </b>             
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                            {{#each products}}
+                                {{#each productDetails}}
+                            <tr>
+                                    <td><img src="/product-images/{{this._id}}-01.jpg" style="width: 80px"></td>
+                                    <th>{{this.productName}}</th>
+                                {{/each}}
+                                <th>{{this.quantity}}</th>
+                            {{/each}}
+                            
+                            </tr>
+                            
+                           
+                        </tbody>
+                </table>
+                <hr class="mt-4 mb-4" style="height:5px;border-width:0;color:gray;background-color:gray">
+                {{/each}}
+                
+            </div>
+        </div>
+    </div>
+</section>

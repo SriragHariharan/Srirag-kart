@@ -1,0 +1,19 @@
+.product-name{
+    color:black;
+    text-decoration:none;
+}
+
+.product-price{
+    color:blue; 
+    font-family: cursive;
+    text-decoration: none
+}
+
+.view-all-products{
+    font-family: cursive;
+    color:red;
+}
+
+.products{
+    font-family:Gill Sans;
+}

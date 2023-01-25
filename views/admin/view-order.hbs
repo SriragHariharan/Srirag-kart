@@ -1,0 +1,79 @@
+<h1 class="text-center m-4 " style="font-family: cursive;">View Orders</h1>
+
+<section>
+    <div class="container">
+        <div class="row">  
+            <div class="col-12 m-auto">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Product Size</th>
+                        <th scope="col">Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            
+                            {{#each orderProducts.products}}
+                                <td><img src="/product-images/{{item}}-01.jpg" alt="" style="width: 70px;"></td>
+                                {{#each productDetails}}
+                                <td>{{productName}}</td>
+                                <td>{{productSize}}</td>
+                                {{/each}}
+                                <td>{{quantity}}</td>
+                        </tr>
+                            {{/each}}  
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 m-4 ">
+                <h5><small>Order ID :</small> {{orderProducts._id}}</h5>
+                <h5><small>Shipping Address : </small></h5>
+                <h5>{{orderProducts.name}}<br>{{orderProducts.address}}<br>Phone : {{orderProducts.id}}</h5>
+                <br><br>
+                <h6>Payment Method : {{orderProducts.paymentMethod}}</h6>
+                <br><br>
+                <h6>Payment Successfull : {{orderProducts.paymentSuccessfull}}</h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr style="height:5px;border-width:0;color:gray;background-color:gray">
+
+<section class="mb-5">
+    <div class="container">
+            <h3 class="text-danger text-center"><small>Current Status :</small> {{orderProducts.status}}</h3>
+            <br><br>
+            <h5 class="mb-4">Set status :</h5>
+        <div class="row">
+            <div class="col-3">
+                <a style="width: 100%;" href="/admin/order-status?orderID={{orderProducts._id}}&status=confirmed" class="btn btn-dark" id="orderConfirmedButton"><b>Confirm Order</b></a>
+            </div>
+
+            <div class="col-3">
+                <a style="width: 100%;" href="/admin/order-status?orderID={{orderProducts._id}}&status=packed" class="btn btn-info" id="packedButton"><b>Order Packed</b></a>
+            </div>
+            
+            <div class="col-3">
+                <a style="width: 100%;" href="/admin/order-status?orderID={{orderProducts._id}}&status=shipped" class="btn btn-warning" id="shippedButton"><b>Order shipped</b></a>
+            </div>
+            
+            <div class="col-3">
+                <a style="width: 100%;" href="/admin/order-status?orderID={{orderProducts._id}}&status=delivered"  class="btn btn-success" id="deliveredButton"><b>Order Delivered</b></a>
+            </div>
+        
+        </div>
+    </div>
+</section>

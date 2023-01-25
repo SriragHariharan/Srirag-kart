@@ -1,0 +1,78 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 m-auto">
+                <div class="card">
+                    
+                    <div class="card-body m-auto" style="width: 20rem;">
+                        <h5 class="card-title"> Hi  {{userDetails.username}}  !</h5>
+                        <p class="card-text">Mobile : <b>{{userDetails.mobileNumber}}</b> </p>
+                        <p class="card-text">e mail : <b>{{userDetails.email}}</b> </p>
+                        <p class="card-text">Address : <b>{{userDetails.address}}</b> </p>
+                        <a href="/profile" class="btn btn-primary">Edit Address</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container  mt-5">
+        <div class="row">
+            <div class="col-10 col-md-10 col-lg-10 m-auto">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {{#each cartProducts}}
+                        <tr>
+                        <th scope="row">
+                            <a href="/view-product/{{item}}" style="text-decoration: none;">
+                                <img src="/product-images/{{item}}-01.jpg" alt="" width="80px" >
+                            </a>
+                        </th>
+                        {{#each productDetails}}
+                        <td><b>{{productName}}</b></td>
+                        <td><b>{{productPrice}}</b></td>
+                        {{/each}}
+                        
+                        <td>
+                            <a class="btn btn-info" href="/view-product/{{item}}">VIEW</a>
+                        </td>
+    
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                <h3 class="float-right text-info">Grand Total : $ {{cartTotal}}</h3>
+
+                <form method="post" action="/place-order/">
+                    <fieldset>
+                        <legend>Payment Method:</legend>
+                        <div>
+                            <input  type="number" name="grandTotal" value={{cartTotal}} hidden>
+                            <input type="radio" id="cod" name="paymentMethod" value="cod" checked>
+                            <label for="cod">Cash on Delivery</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="onlinePayment" name="paymentMethod" value="onlinePayment">
+                            <label for="onlinePayment">Online Payment (Razorpay)</label>
+                        </div>
+                        <input type="submit" value="Place Order" class="btn btn-primary">
+
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</section>
+

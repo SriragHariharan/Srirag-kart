@@ -1,0 +1,27 @@
+{{!-- Welcome back admin message   ||    received as flash --}}
+
+{{#if WelcomeBackmsg}}
+    <nav class="navbar  mx-auto navbar-expand-lg mt-4 ml-5 pl-5 pr-5 mr-5" style="background-color: #98FB98;font-family: cursive; width:75% ; " >
+        <h5 class=" mt-1 text-dark mx-auto">{{WelcomeBackmsg}}</h5>
+    </nav>
+{{/if}}
+
+{{!-- Item added to cart successfully message   ||    received as flash --}}
+{{#if itemAddedTosales}}
+    <nav class="navbar  mx-auto navbar-expand-lg mt-4 ml-5 pl-5 pr-5 mr-5" style="background-color: #98FB98;font-family: cursive; width:75% ; " >
+        <h5 class=" mt-1 text-dark mx-auto">{{itemAddedTosales}}</h5>
+    </nav>
+{{/if}}
+
+{{!-- Hi Admin --}}
+
+<section>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12 text-danger mt-5">
+               <h1> HI ADMIN !</h1>
+            </div>
+        </div>
+    </div>
+</section>
+

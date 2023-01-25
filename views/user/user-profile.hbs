@@ -1,0 +1,26 @@
+<div class="container">
+        <h3 style="font-family: cursive;" class="m-5 text-center"><u>User Profile</u></h3>
+    <div class="row">
+        
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 mt-2 mb-5 m-auto">
+            <h2> Hi {{userSession.username}} !</h2>
+            <hr>
+            <form action="/update-profile/" method="post">
+            <label for="">Username</label>
+            <input type="text" class="form-control" name="username" value="{{userSession.username}}"><br>
+            <label for="">Mobile number</label>
+            <input type="text" class="form-control" name="userMobile" value="{{userSession.mobileNumber}}"><br>
+            <label for="">e mail</label>
+            <input type="type" class="form-control" name="userEmail" value="{{userSession.email}}" id="userEmail"><br>
+            <p class="text-danger mb-3" id="emailLabel"></p>
+            <label for="">Shipping Address</label>
+            <textarea class="form-control" name="address" id="address" rows="5">{{userSession.address}}</textarea><br>
+            <p class="text-danger mb-3" id="addressLabel"></p>
+            <input type="submit" value="Update" class="float-right" style="cursor: pointer;">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

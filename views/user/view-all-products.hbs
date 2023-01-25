@@ -1,0 +1,124 @@
+
+
+
+<h3 class="text-center">ALL PRODUCTS</h3>
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 25px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h5 class="text-white ml-4">Shop by brand</h5>
+  <a href="/search-by-brand/SG">SG</a>
+  <a href="/search-by-brand/SS">SS</a>
+  <a href="/search-by-brand/MRF">MRF</a>
+  <a href="/search-by-brand/BAS">BAS</a>
+  <a href="/search-by-brand/Kookaburra">Kookaburra</a>
+  <a href="/search-by-brand/GM">GM</a>
+  <a href="/search-by-brand/SF">SF</a>
+  <a href="/search-by-brand/Gray Nicholls">Gray Nicholls</a>
+  <a href="/search-by-brand/New Balance">New Balance</a>
+  <a href="/search-by-brand/SM">SM</a>
+  <a href="/search-by-brand/DSC">DSC</a>
+  <a href="/search-by-brand/Remfry">Remfry</a>
+  <a href="/search-by-brand/GortonShire">GortonShire</a>
+  <br>
+  <h5 class="text-white ml-4">Shop by category</h5>
+  <a href="#">Cricket bat</a>
+  <a href="#">Cricket ball</a>
+  <a href="#">Cricket kit bag</a>
+  <a href="#">Cricket Helmet</a>
+  <a href="#">Batting gloves</a>
+  <a href="#">Elbow guards</a>
+  <a href="#">Chest guards</a>
+  <a href="#">Thigh Guards</a>
+  <a href="#">Batting pads</a>
+  <a href="#">Wicket keeping gloves</a>
+  <a href="#">Wicket keeping pads</a>
+  <a href="#">Cricket Shoes</a>
+  <a href="#">Cricket wearables</a>
+  <a href="#">Cricket Accessories</a>
+  <br><br><br>
+</div>
+
+<span style="font-size:20px;cursor:pointer; background-color:aqua" class="ml-5" onclick="openNav()">&#9776; Filter Menu</span>
+<hr>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+   
+
+{{!-- card view of products --}}
+<section>
+    <div class="container">
+        <div class="row ml-1 mr-1" id="row">
+            {{#each products}}
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-5 m-auto">
+                <a href="/view-product/{{this._id}}">
+                <div class="card" style="border:none;">
+                    <img class="card-img-top" src="/product-images/{{this._id}}-01.jpg" alt="Card image cap"
+                        style="height:350px ;" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title"style="color:black;font-family: cursive;text-decoration: none" >{{this.productName}}</h5>
+                        <p class="card-text" style="font-family: cursive;text-decoration: none">$ {{this.productPrice}}</p>
+                </a>
+                        
+                    </div>
+                </div>
+                
+          </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+

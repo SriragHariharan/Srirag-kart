@@ -1,0 +1,37 @@
+<h2 class="text-center">ORDERS</h2>
+
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Order ID</th>
+                        <th scope="col">View Order</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Payment Method</th>
+                        </tr>
+                    </thead>
+                        {{!-- {{#each orders}}
+                        <th scope="col" colspan="4">Payment Method : {{status}}</th>
+                        {{/each}} --}}
+                    <tbody>
+                        {{#each orders}}
+                        <tr>
+                            <td>{{date}}</td>
+                            <td>{{_id}}</td>
+                            <td><a href="/admin/view-order/{{_id}}/" class="btn btn-primary">VIEW</a></td>
+                            <td class="text-success"><b>{{status}}</b></td>
+                            <td>{{paymentMethod}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

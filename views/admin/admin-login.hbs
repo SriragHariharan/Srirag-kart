@@ -1,0 +1,37 @@
+
+{{#if LoginErrorMsg}}
+    <nav class="navbar mx-auto navbar-expand-lg mt-4 ml-5 mr-5" style="background-color: #CD5C5C;font-family: cursive; width:75% ;">
+        <h5 class=" mt-1 text-white mx-auto">{{LoginErrorMsg}}</h5>
+    </nav>
+{{/if}}
+
+{{!-- admin login-form --}}
+<div class="container mt-5 justify-content-center">
+    <div class="row">
+        <div class="col-md-4 m-auto">
+            <h1 style="font-family:Lucida Console">Admin Login </h1>
+
+            <form method="post" action="/admin/login">
+                <div class="form-group mt-5">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" value="admin@test.com" name="adminEmail" class="form-control"  placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" value="123" name="adminPwd" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{{!-- /admin login-form --}}
+
+<section class="text-center">
+    Forgot Password/emailID ?? <br> Contact developers to replace pwd and userID
+</section>
+

@@ -1,0 +1,73 @@
+{{#if userloginFailed}}
+    <nav class="navbar mx-auto navbar-expand-lg mt-4 ml-5 mr-5" style="background-color: #CD5C5C;font-family: cursive; width:75% ;">
+        <h5 class=" mt-1 text-white mx-auto">{{userloginFailed}}</h5>
+    </nav>
+{{/if}}
+
+{{#if messageForLoginToAddToCart}}
+    <nav class="navbar mx-auto navbar-expand-lg mt-4 ml-5 mr-5" style="background-color: #CD5C5C;font-family: cursive; width:75% ;">
+        <h5 class=" mt-1 text-white mx-auto">{{messageForLoginToAddToCart}}</h5>
+    </nav>
+{{/if}}
+
+{{#if buyNowLogin}}
+    <nav class="navbar mx-auto navbar-expand-lg mt-4 ml-5 mr-5" style="background-color: #CD5C5C;font-family: cursive; width:75% ;">
+        <h5 class=" mt-1 text-white mx-auto">{{buyNowLogin}}</h5>
+    </nav>
+{{/if}}
+
+
+
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-6 m-auto">
+            <h3 class="mb-5">Login</h3>
+            <form action="/login/" method="post">
+            <div class="form-group">
+                <label for="email">Mobile number</label>
+                <input type="number" class="form-control" name="mobileNumber" value="9876543210">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" name="password" value="12345">
+            </div>
+            <a href="/signup/" class="float-left">new user ? signup</a>
+            <button type="submit" class="btn btn-default float-right">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    *{
+        font-family: cursive;
+    }
+
+    .form-control{
+        border-width: 7px;
+    }
+             
+         button {
+            background-image: linear-gradient(to right, #EF3B36 0%, #FFFFFF  51%, #EF3B36  100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          button:hover {
+            padding: 5px;
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         
+</style>

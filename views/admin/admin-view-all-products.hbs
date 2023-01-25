@@ -1,0 +1,32 @@
+
+{{!-- products will be listed here as tables --}}
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Product Price</th>
+                        <th scope="col">Product Stock</th>
+                        <th scope="col">Product Image</th>
+                        <th scope="col">Oprations</th>
+                        </tr>
+                    </thead>
+                        {{#each products}}
+                    <tbody>
+                        <tr>
+                        <td>{{this.productName}}</th>
+                        <td>{{this.productPrice}}</td>
+                        <td>{{this.productStock}}</td>
+                        <td> <img src="/product-images/{{this._id}}-01.jpg" alt="" width="auto" height="100px"> </td>
+                        <td> <a href="/admin/view-and-edit-product/{{this._id}}" class="btn btn-primary">View Product</a> </td>
+                        </tr>
+                    </tbody>
+                        {{/each}}
+                    </table>
+            </div>
+        </div>
+    </div>
+</section>

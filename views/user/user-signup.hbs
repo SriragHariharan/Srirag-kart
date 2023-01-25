@@ -1,0 +1,33 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 m-auto">
+            <h3 class="text-center mb-2 mt-4" style="font-family: cursive;">Signup</h3>
+                <form action="/signup/" method="post">
+                    <div class="form-group">
+                        <label for="username">User name:</label>
+                        <input type="text" class="form-control" name="username" value="Srirag">
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile number</label>
+                        <input type="number" class="form-control" name="mobileNumber" value="9876543210">
+                        <p class="text-danger"> {{mobileNumberError}} </p>
+                        <p class="text-danger">{{mobileNumberExists}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Password</label>
+                        <input type="password" class="form-control" name="password1">
+                    </div>
+                    <div class="form-group">
+                        <label>confirm password</label>
+                        <input type="password" class="form-control" id="pwd2" name="password2">
+                       <p class="text-danger"> {{signUpErrorMessage}} </p>
+                    </div>
+                    <p class="text-success" id="errorMessage"></p>
+                    <a href="/login/">Already a member ? login</a>
+                    <input type="submit" value="Signup" class="float-right">
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
